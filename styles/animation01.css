@@ -54,8 +54,8 @@ button {background: #eee; padding: 20px 5px;}
 }
 .step1 .sale .photo_chip {display: flex;}
 .step1 .sale .photo_chip span {width: 12px; height: 12px;}
-.step1 .sale .photo_chip .colro1 {background: #000;}
-.step1 .sale .photo_chip .colro2 {background: #0cf;}
+.step1 .sale .photo_chip .color1 {background: #000;}
+.step1 .sale .photo_chip .color2 {background: #0cf;}
 .step1 .sale h1 {}
 .step1 .sale .price {}
 .step1 .sale:hover img {
