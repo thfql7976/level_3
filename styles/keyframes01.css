@@ -1,0 +1,93 @@
+/* keyframes01.css */
+/* 공통 */
+h1 {margin: 10px 15px 30px;}
+.map {background: #eee; padding: 15px;}
+.map .ball {
+    width: 100px; height: 100px;
+    display: block; border-radius: 50%; 
+    background:linear-gradient(45deg #000 transparent);
+}
+.map .ball img {width: 100%;}
+.map span[class*=txt] {
+    font-size: 2rem; display: block; text-align: center;
+    line-height: 1.3; font-family: 300;
+}
+/* 개별 */
+/* animation: 불러올키프레임이름 지속시간 */
+/* :hover, transition은 사용자의 동작(이벤트)와 함께 애니메이션을 만들 떄 */
+/* animation, keyframe은 사용자의 동작 관계없이 자동으로 시작하고 끝나는 애니메이션을 제작할때  */
+.map1 .ball {animation:right600 2s ease 1s 2 alternate-reverse both;}
+/* (위) 1초 뒤에 2초동안 2번 재생 */
+.map2 .ball {animation:left50 1.5s linear 2s infinite alternate;}
+/* (위) 2초 뒤에 1.5초동안 무한재생 */
+.map3 .ball img {animation: rotate360  0.8s linear infinite;}
+.map3 .ball {animation:right400left200 1.5s both;}
+.map4 .txt1 {animation:txtDisplay_v1 1s ;}
+.map4 .txt2 {opacity: 0; animation:txtDisplay_v2 1s 0.7s both ;}
+.map5 .txt1 {animation:txtDisplay_v1 9s ;}
+.map5 .txt2 {animation:txtDisplay_v1 7s ;}
+.map5 .txt3 {animation:txtDisplay_v1 5s ;}
+.map5 .txt4 {animation:txtDisplay_v1 3s ;}
+.map5 .txt5 {animation:txtDisplay_v1 2s ;}
+.map6 .bg {
+    background-image: url(../images/BG.jpg);
+    display: block; width: 300px; height: 100px;
+    background-size: auto 100px;
+    animation: bgInfinite 50s linear infinite;
+}
+/* ========================================애니메이션 키프레임(css 파일별도 권장) */
+@keyframes bgInfinite {
+    0% {background-position-x:0 ;}
+    100% {background-position-x:5000px ;}
+}
+@keyframes right600 {
+    0% {transform: translateX(0px);}
+    100% {transform: translateX(600px);}
+}
+@keyframes left50 {
+    0% {transform:translateX(400px);}
+    100% {transform:translateX(50px);}
+}
+@keyframes rotate360 {
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+}
+@keyframes right400left200 {
+    0%{transform:translateX(0px);}
+    500%{transform:translateX(400px);}
+    100%{transform:translateX(200px);}
+}
+/* 글자 한줄씩 나타나는 애니메이션 필요 속성: 위->아래, 투명->불투명 뿌옇->선명 */
+@keyframes txtDisplay_v1 {
+    0% {transform:translateY(-15px); opacity: 0; filter:blur(10px);}
+    100% {transform:translateY(0px); opacity: 1; filter:blur(0);}
+}
+@keyframes txtDisplay_v2 {
+    0% {transform:translateY(-15px); opacity: 0; filter:blur(10px);}
+    100% {transform:translateY(0px); opacity: 1; filter:blur(0);}
+}
+@keyframes txtpoto_v1 {
+    0% {transform: translateY(-10px); opacity: 0;}
+    100% {transform: translateY(0px); opacity: 1;}
+}
+@keyframes txtpoto_v2 {
+    0% {transform: translateY(-10px); opacity: 0;}
+    100% {transform: translateY(0px); opacity: 1;}
+}
+@keyframes txtpoto_v3 {
+    0% {transform: translateY(-10px); opacity: 0;}
+    100% {transform: translateY(0px); opacity: 1;}
+}
+@keyframes txtpoto_v4 {
+    0% {transform: translateY(-10px); opacity: 0;}
+    100% {transform: translateY(0px); opacity: 1;}
+}
+@keyframes txtpoto_v5 {
+    0% {transform: translateY(-10px); opacity: 0;}
+    100% {transform: translateY(0px); opacity: 1;}
+}
+    /* @keyframes 애니메이션 생셩명 {
+        0%{시작 장면속성:값}
+        50% {중간 장면 속성:값;}
+        100% {종료 장면속성;값;}
+    } */

@@ -1,0 +1,92 @@
+/* animation */
+.step2 {}
+.step2 p {
+    background-image:url(https://i.pinimg.com/736x/b5/6e/12/b56e12b3bf678bcce5a12651e1990135.jpg);
+    width: 50%; height: 350px;
+    background-position: center;
+    background-size: 100%;
+    /* transition:애니메이션적용속성 지속시간, 적용속성 지속시간, 속성 시간,; */
+    transition:
+    background-size 0.8s,
+    background-image 3s,
+    background-position 2s;
+}
+/* p에 마우스 올렸을때 배경이미지 속성 애니메이션 적용 */
+.step2 p:hover {
+    background-size: 120%;
+    background-image: url(https://i.pinimg.com/736x/01/50/54/01505468fdfb59aeb17124a66b14a1e8.jpg);
+    background-position: left;
+}
+/* ===============================================가속도 애니메이션 연습 */
+#map {
+    padding: 10px; background-color: #f5f5f5;
+    display: flex; flex-flow: column nowrap;
+}
+#map #start {
+    width: 50px; height: 50px;
+    border-radius: 50%; background: #f00; color: #fff;
+}
+#map img {
+    width: 100px;
+}
+#map .rabbit1 {transition:transform 0.8s ease;}
+#map .rabbit2 {transition:transform 0.8s linear;}
+#map span {transform: scaleX(-1);}
+#map span .rabbit3 {transform:translatex(400px);transition:transform 0.5s
+    ease-in;} /* 기본위치 */
+    /* transform에 두개 이상의 속성이 적용 됐을때 transition은 그 속성을 따로 구분하는게 아닌
+    transform에 들어간 모든 속성에 동사에 애니메이션을 적용한다.
+    따로 적용하고 싶다면 부모-자식 구조로 transform속성을 나눠야한다.*/
+#map .rabbit4 { transition:transform 0.5s ease-out ;}
+/* 시작버튼에 마우스를 올리면 1번 자동차가 오른쪽으로 400px 만큰 이동 */
+#map #start:hover + .rabbit1 {transform:translateX(400px);}
+/* 시작버튼에 마우스를 올라면 2번 자동차가 오른쪽으로 400px 아래로 15px 만큼 이동 */
+#map #start:hover ~ .rabbit2 {transform:translate(400px,15px);}
+/* 시작버튼에 마우스를 올리면 3번 자동차가 오른쪽 400px위치에서 왼쪽 0위치만큼 이동 */
+#map #start:hover ~ .rabbit3 {transform:translateX(0);}
+/* 시작버튼에 마우스를 올리면 4번 자동차가 제자리에서 10도 회전, 오른쪽으로 100 이동 */
+#map #start:hover ~ .rabbit4 {transform:rotate(10deg) translateX(100px);}
+/* ===================================내비게이션 메뉴_서브메뉴 */
+nav {width: 350px; margin: 60px 20px; /* 가로(w) 부 <-자, 세로(h) 부->자*/
+    text-align: center;
+} 
+nav > ul {}
+nav > ul > li {position: relative;}
+/* nav > ul > li:hover .sub { display: block;} */
+nav > ul > li:hover .sub {height: 120px; opacity: 1;}
+nav > ul > li > a {/* 메인메뉴=a1 */
+    background-color: #000; color: #fff; display: block;
+    line-height: 40px;
+}
+nav > ul > li .sub {
+    /* display: none; 1.서브메뉴 초기 숨기기 */
+    height: 0; overflow: hidden;
+    opacity: 0;
+    position: absolute; width: 100%;
+    transition:
+    height 0.4s ease,
+    opacity 0.6s;
+}
+nav > ul > li .sub li {}
+nav > ul > li .sub li a {/* 서브메뉴-a */
+    background-color: aqua; color: #000; display: block;
+    line-height: 30px
+}
+.hero_bnr {background-color: pink; height: 400px;}
+/* 메인메뉴에 마우스 올리면 서브메뉴가 실행된다. -> CSS */
+/* 1. 서브메뉴 초기 숨기기 */
+/* 메인메뉴를 클릭(터치)하면 서브메뉴가 실행된다. -> JS */
+.airbnb  {}
+.airbnb .lnb {text-align:center;}
+.airbnb .lnb > li {
+    background-color: yellow; height: 50px;
+    line-height: 20px; 
+}
+.airbnb .lnb > li > a {}
+.airbnb .lnb > li > .sub {}
+.airbnb .lnb > li > .sub li {}
+.airbnb .lnb > li > .sub li a {}
+.airbnb_hero {
+    background-color: purple;
+    height: 400px;
+}
